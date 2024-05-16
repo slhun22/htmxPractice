@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TicketPage</title>
+    <link rel="stylesheet" type="text/css" href="ticketstyle.css"/>
+    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body>
+    <h2>Tickets</h2>
+    <!---항목 이름--->
+    <ul class="board">
+        <li class="fl tc w70 title t_line">번호</li>
+        <li class="fl tc w500 title t_line">제목</li>
+        <li class="fl tc w120 title t_line">글쓴이</li>
+        <li class="fl tc w100 title t_line">작성일</li>
+        <li class="fl tc w100 title">조회수</li>
+    </ul>
+    <!---아이템들--->
+    <ul class="board">
+        <li class="fl tc w70 list t_line lt_line">1</li>
+        <li class="fl tc w500 list t_line lt_line">무야호</li>
+        <li class="fl tc w120 list t_line lt_line">이찬근</li>
+        <li class="fl tc w100 list t_line lt_line">2024-05-17</li>
+        <li class="fl tc w100 list lt_line">123</li>
+    </ul>
+    <div hx-get="http://localhost:8080/ticket" hx-trigger="load">새항목자리</div>
+     <!---hx트리거 종류 : load click input change submit focus blur mouseenter mouseleave custom event--->
+</body>
+</html>
