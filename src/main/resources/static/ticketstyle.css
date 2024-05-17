@@ -1,27 +1,38 @@
 @charset "utf-8";
 
-/* 공통옵션 */
-ul li {list-style:none; }
-.fl {float:left; }
-.tc {text-align:center; }
+  table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            width: 50px;
+        }
+        thead {
+            background-color : lightskyblue;
+        }
+        tbody {
+            border : 1px solid black;
+        }
 
-/* 게시판 목록 */
-.board {width: 950px; }
-.w70 {width:70px; }
-.w500 {width:500px; }
-.w120 {width:120px; }
-.w100 {width:100px; }
+        .w200 {
+            width : 200px;
+        }
 
-.title {
-	height: 50px;
-	line-height: 50px;
-	background:skyblue;
-	font-weight: bold;
-}
-.t_line {border-right:solid 1px gray;}
-.lt_line {border-bottom:solid 1px gray;}
-.list {
-	height: 40px;
-	line-height: 40px;
-	background: #f3f3f3;
-}
+        .buttonSet {
+            position : relative;
+            left : 660px;
+            top : -10px;
+        }
+        .homebutton {
+            padding : 10px;
+            width : 100px;
+        }
+
+        th > button {
+            padding : 8px;
+            margin : -5px;
+            background-color : lightskyblue;
+            width : 100px;
+        }

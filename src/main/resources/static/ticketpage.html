@@ -3,28 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <title>TicketPage</title>
-    <link rel="stylesheet" type="text/css" href="ticketstyle.css"/>
-    <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+    <link rel="stylesheet" href="ticketstyle.css">
 </head>
 <body>
-    <h2>Tickets</h2>
-    <!---항목 이름--->
-    <ul class="board">
-        <li class="fl tc w70 title t_line">번호</li>
-        <li class="fl tc w500 title t_line">제목</li>
-        <li class="fl tc w120 title t_line">글쓴이</li>
-        <li class="fl tc w100 title t_line">작성일</li>
-        <li class="fl tc w100 title">조회수</li>
-    </ul>
-    <!---아이템들--->
-    <ul class="board">
-        <li class="fl tc w70 list t_line lt_line">1</li>
-        <li class="fl tc w500 list t_line lt_line">무야호</li>
-        <li class="fl tc w120 list t_line lt_line">이찬근</li>
-        <li class="fl tc w100 list t_line lt_line">2024-05-17</li>
-        <li class="fl tc w100 list lt_line">123</li>
-    </ul>
-    <div hx-get="http://localhost:8080/ticket" hx-trigger="load">새항목자리</div>
-     <!---hx트리거 종류 : load click input change submit focus blur mouseenter mouseleave custom event--->
+      <h1>Ticket Information</h1>
+
+      <button class="homebutton">Home</button>
+
+      <div class="buttonSet">
+          <button>Timeline</button>
+          <button>Tickets</button>
+          <button>Admin</button>
+      </div>
+
+
+    <table>
+        <thead>
+            <tr>
+                <th><button>Number#</button></th>
+                <th><button class="w200">Title</button></th>
+                <th><button>Milestone</button></th>
+                <th><button>Sort</button></th>
+                <th><button>Importance</button></th>
+                <th><button>State</button></th>
+                <th><button>Date</button></th>
+            </tr>
+        </thead>
+        <tbody id="user-table-body">
+            <!-- User info will be appended here -->
+        </tbody>
+    </table>
+
+
+    <script>
+        //html이 load되는 즉시 실행되는 함수
+        /*
+         document.addEventListener('DOMContentLoaded', function() {
+            // 이 부분에 실행시키고 싶은 함수를 넣습니다.
+            loadUser();
+        });
+         */
+           async function loadUser() {
+            try {
+                const response = await fetch('http://localhost:8080/user');
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const user = await response.json();
+
+                const tableBody = document.getElementById('user-table-body');
+                const newRow = document.createElement('tr');
+
+                const nameCell = document.createElement('td');
+                nameCell.textContent = user.name;
+                newRow.appendChild(nameCell);
+
+                const idCell = document.createElement('td');
+                idCell.textContent = user.id;
+                newRow.appendChild(idCell);
+
+                const ageCell = document.createElement('td');
+                ageCell.textContent = user.age;
+                newRow.appendChild(ageCell);
+
+                tableBody.appendChild(newRow);
+            } catch (error) {
+                console.error('Fetch error:', error);
+            }
+        }
+
+    </script>
 </body>
 </html>
