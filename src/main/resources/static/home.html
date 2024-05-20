@@ -29,9 +29,9 @@
     <button class="xbutton" onclick="hideElements()">X</button>
     <h1 class="tc">Project Add</h1>
     <div class="input-box">
-        제목<input type="text" placeholder="제목을 입력하세요." style="width: 50%">
+        제목<input type="text" id="title-input" placeholder="제목을 입력하세요." style="width: 50%">
         <br>
-        내용<textarea rows="10" cols="40">내용을 입력하세요.</textarea>
+        내용<textarea id="description-input" rows="10" cols="40" style="resize: none"></textarea>
     </div>
     <button class="popup-addbutton">Add</button>
 </div>
@@ -50,6 +50,8 @@
             hideableElements.forEach(function(element) {
                 element.style.display = 'block';
             });
+            document.getElementById('title-input').value = '';
+            document.getElementById('description-input').value = '내용을 입력하세요.';
         }
   </script>
 
