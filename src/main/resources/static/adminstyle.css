@@ -14,6 +14,11 @@
         .tc {
             text-align: center;
         }
+        .center {
+            position : absolute;
+            left : 50%;
+            transform : translateX(-50%);
+        }
         #bg-page {
             z-index: 1;
             position: absolute;
@@ -39,9 +44,6 @@
         .hide{
             display : none;
         }
-        .show{
-            display : block;
-        }
         .input-box {
             display : flex;
             flex-direction : column;
@@ -56,9 +58,34 @@
         }
         .xbutton {
             position : absolute;
-            left : 90%;
-            top : 0%;
+            right : -2%;
+            top : -3%;
             float: right;
             width : 40px;
             background-color: pink;
+        }
+        .backbutton {
+            width : 100px;
+            background-color : lightgoldenrodyellow;
+        }
+         table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+            width: 100px;
+        }
+        thead {
+            position : sticky;
+            top : 0;
+            background-color : lightskyblue;
+        }
+        tbody {
+            border : 1px solid black;
+        }
+        .user-table {
+            height : 300px;
+            overflow-y : scroll;
         }
