@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AdminPage</title>
+    <link rel="stylesheet" href="adminstyle.css">
+</head>
+<body>
+    <h1>Admin Page</h1>
+    <div class="button-set">
+        <button >Add User</button>
+        <button onclick="openPopUp('projectadd-pop')">Add Project</button>
+        <button>Project Management</button>
+    </div>
+
+    <div id="useradd-pop" class="popup-page hide">
+
+    </div>
+
+    <div id="projectadd-pop" class="popup-page hide">
+         <button class="xbutton" onclick="closePopUp('projectadd-pop')">X</button>
+         <h1 class="tc">Project Add</h1>
+         <div class="input-box">
+             제목<input type="text" id="title-input" placeholder="제목을 입력하세요." style="width: 50%">
+            <br>
+            내용<textarea id="description-input" rows="10" cols="40" style="resize: none"></textarea>
+        </div>
+        <button class="popup-addbutton">Add</button>
+    </div>
+
+    <div id="projectmanage-pop" class="popup-page hide">
+
+    </div>
+
+    <div id="bg-page" class="hide"></div>
+
+    <script>
+          function closePopUp(pageId) {
+              document.getElementById(pageId).classList.add('hide');
+              document.getElementById('bg-page').classList.add('hide');
+          }
+
+          function openPopUp(pageId) {
+              document.getElementById(pageId).classList.remove('hide');
+              document.getElementById('bg-page').classList.remove('hide');
+              document.getElementById('title-input').value = '';
+              document.getElementById('description-input').value = '내용을 입력하세요.';
+          }
+
+        function showElements() {
+            const hideableElements = document.querySelectorAll('.hideable');
+            hideableElements.forEach(function(element) {
+                element.style.display = 'block';
+            });
+
+        }
+    </script>
+</body>
+</html>
