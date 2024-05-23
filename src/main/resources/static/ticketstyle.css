@@ -20,23 +20,9 @@
             font-size : 15px;
             padding : 6px;
         }
-        .tc {
-            text-align: center;
-        }
-        .w200 {
-            width : 200px;
-        }
-        .w700 {
-            width : 700px;
-        }
-        .h200 {
-            height : 200px;
-        }
-
         .buttonSet {
             position : relative;
-            left : 645px;
-            top : -10px;
+            left : 64%;
         }
         .homebutton {
             padding : 10px;
@@ -44,10 +30,10 @@
         }
         .addbutton {
             position : relative;
-            left : 900px;
+            left : 68%;
             top : 500px;
             padding : 10px;
-            width : 100px;
+            width : 130px;
         }
 
         .popup-addbutton {
@@ -97,6 +83,7 @@
             width : 600px;
             height : 450px;
             border : 1px solid black;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
         }
         .hideable{
             display : none;
