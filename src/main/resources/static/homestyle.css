@@ -5,9 +5,8 @@
             border-collapse: collapse;
         }
         th, td {
-            padding: 8px;
-            text-align: center;
-            width: 50px;
+            padding: 10px;
+            width: 150px;
         }
         thead {
             position : sticky;
@@ -94,6 +93,8 @@
             align-items : center;
         }
         .proj-table {
+            width : 1000px;
             height : 450px;
+            border : 1px solid black;
             overflow-y : scroll;
         }

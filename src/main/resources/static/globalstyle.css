@@ -17,8 +17,14 @@
   .w200 {
         width : 200px;
   }
+  .w500 {
+      width : 500px;
+  }
   .w700 {
          width : 700px;
+  }
+  .w1000 {
+      width : 1000px;
   }
   .h200 {
         height : 200px;
